@@ -11,7 +11,7 @@ module.exports.getAll = async (req, res) => {
 };
 
 module.exports.update = async (req, res) => {
-  const response = await item.update(req.query, req.body);
+  const response = await item.update(req.params, req.body)
   res.send(response);
 };
 

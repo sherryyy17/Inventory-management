@@ -32,16 +32,10 @@ module.exports.getAll = async() => {
     return items;
 };
 
-/*module.exports.update = async ({}, {}) => {
-    const items = await ItemsModel.update({
-
-    },{
-
-    },{
-
-    });
-    return items;
-}*/
+module.exports.update = async ({id}, itemdata) => {
+    const updateItem = await ItemsModel.findOneAndUpdate({_id: id }, itemdata, {new:true})
+    return updateItem;
+}
 
 module.exports.delete = async ({ id }) => {
     const res = await ItemsModel.deleteMany({
